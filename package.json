@@ -1,0 +1,9 @@
+{
+    "name": "medical-chat-room",
+    "version": "0.0.1",
+    "description": "Helps people suffering from similar afflictions talk with each other",
+    "dependencies": {
+        "express": "^4.19.2",
+        "socket.io": "^4.7.5"
+    }
+}
