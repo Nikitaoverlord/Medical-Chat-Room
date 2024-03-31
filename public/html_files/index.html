@@ -17,8 +17,17 @@
             
             <div id="searchResults"></div>
 
-            <button>Login</button>
-            <button>Sign Up</button>
+            <button id="loginButton">Login</button>
+            <button id="signUpButton">Sign Up</button>
+            <form id="loginForm" style="display: none;">
+                <p id="loginText">Log in/Sign in</p>
+                <input id="emailInput" type="text" placeholder="Email Adress">
+                <input id="passwordInput" type="text" placeholder="Password">
+                <input id="usernameInput" type="text" placeholder="Username">
+                <button id="loginFormButton">Login/Sign in</button>
+            </form>
+            <p id="accountSuccessInfo"></p>
+
             <p>You can make a group by emailing us</p>
         </div>
 
@@ -36,6 +45,6 @@
         </div>
 
         <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
-        <script src="/frontend.js"></script>
+        <script src="/js/frontend.js"></script>
     </body>
 </html>

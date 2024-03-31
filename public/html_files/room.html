@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="favicons/favicon.ico?">
+</head>
+
+<body>
+      <!-- Text screen -->
+      <div id="chat" style="text-align: left; background-color: aliceblue; height: 70%; width: 60%; margin: auto; 
+      background-clip: content-box; overflow-y:auto;
+      border: 3px solid rgb(177 158 47); padding: 2px 2px;">
+      </div>
+      <br>
+      <!-- Text Input -->
+      <form id="chatForm" style="display: flex; width: 60%; justify-content: center; margin: auto;">
+        <div style="text-align: center; width:80%">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Type here"
+            style="padding: 12px 20px; margin: 8px 0; box-sizing: border-box; width: 100%; border-color: gold; border-radius: 10px; border-width: 3px;"/>
+        </div>
+        <div style="text-align: center; margin-top: 8px; width: 20%">
+          <button style="width:80%; height: 80%; cursor:pointer; border: 2px solid rgb(177 158 47); border-radius: 10px;">Send!</button>
+        </div>
+      </form>
+
+      <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
+      <script src="/js/room.js"></script>
+</body>
+</html>
