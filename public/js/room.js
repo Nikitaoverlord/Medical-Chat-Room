@@ -3,7 +3,7 @@ const socket = io();
 let url = document.location.pathname
 let urlArray = url.split("/")
 let roomName = urlArray.slice(-1).toString().replace(/%20/g, ' ')
-socket.emit('join room', roomName)
+socket.emit('join room', roomName, localStorage.getItem('username'))
 
 document.title = roomName + ' | Medical Chat Room'
 

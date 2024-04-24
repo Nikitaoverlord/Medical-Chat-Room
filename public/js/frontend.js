@@ -1,5 +1,7 @@
 const socket = io();
 
+localStorage.setItem('username', 'none')
+
 var roomsKnown = []
 
 // UPDATING VARIABLES FROM BACKEND
@@ -39,7 +41,8 @@ socket.on('log in failed', ()=>{
   notification.textContent = 'Incorrect password or invalid email!'
   notification.style.color = 'red'
 })
-socket.on('logged in', () =>{
+socket.on('logged in', (username) =>{
+  localStorage.setItem('username', username)
   notification = document.querySelector('#accountSuccessInfo')
   notification.textContent = 'Logged in!'
   notification.style.color = 'green'
@@ -65,6 +68,11 @@ function displaySearchPage(searchTerm){
     searchResult.textContent = searchTerm
     searchResults.appendChild(searchResult)
     searchResult.addEventListener('click', function(){
+
+      let htmlString = document.getElementsByTagName("html")[0].innerHTML
+      // document.open("text/html", "replace")
+      // document.write(htmlString)
+      // document.close()
       window.location.href = "/room/" + searchTerm;
     })
   }
@@ -114,6 +122,13 @@ function homePageListeners(){
     }
     // Clear input
     passwordInput.value = ""
+  })
+
+  document.querySelector('#Page2').addEventListener('click', function(){
+    window.location.href = "/info"
+  })
+  document.querySelector('#Page3').addEventListener('click', function(){
+    window.location.href = "/share"
   })
 }
 /////////////////////

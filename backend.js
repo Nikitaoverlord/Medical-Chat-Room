@@ -30,6 +30,14 @@ app.get('/room/:roomName', (req, res) => {
     else {res.sendFile(__dirname + '/public/html_files/error.html')}
 })
 
+app.get('/info', (req, res) => {
+    res.sendFile(__dirname + '/public/html_files/info.html')
+})
+
+app.get('/share', (req, res) => {
+    res.sendFile(__dirname + '/public/html_files/share.html')
+})
+
 // reading JSON data
 jsonData = fs.readFileSync(__dirname + '/public/data/messages.json')
 var messages = JSON.parse(jsonData)
@@ -48,9 +56,14 @@ io.on('connection', (socket) => {
         io.emit('updateUsers', users)
     })
 
-    socket.on('join room', (roomName) => {
+    socket.on('join room', (roomName, username) => {
         users[socket.id].room = roomName
         socket.join(roomName)
+
+        if (username != 'none')
+            users[socket.id].name = username
+        else    
+            users[socket.id].name = "Internet Surfer"
     })
 
     socket.on('messageSent', (message)=>{
@@ -71,7 +84,7 @@ io.on('connection', (socket) => {
         let email = contents[0], password = contents[1]
         if (email in accountInfo && accountInfo[email]["password"] == password){
             users[socket.id].loggedIn = true
-            io.to(socket.id).emit('logged in')
+            io.to(socket.id).emit('logged in', (accountInfo[email]["username"]))
         }
         else {io.to(socket.id).emit('log in failed')}    
     })

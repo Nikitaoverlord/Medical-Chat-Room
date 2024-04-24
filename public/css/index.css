@@ -1,0 +1,77 @@
+p2 {
+    color: red;
+  }
+  
+  h1 {
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  body {
+    background-color: dodgerBlue;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  #topmain {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #topleft {
+    background-color: dodgerblue;
+    height: 200px;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  #topright {
+    background-color: dodgerblue;
+    height: 200px;
+    width: 45%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  #middlemain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .tab {
+    color: grey;
+    height: 200px;
+    width: 31%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  #tabMain {
+    display: flex;
+    justify-content: space-between;
+    width: 96vw;
+    align-items: center;
+  }
+
+  #page1 {
+    background-color: blue;
+  }
+  
+  #page2 {
+    background-color: lightblue;
+  }
+  
+  #page3 {
+    background-color: darkblue;
+  }

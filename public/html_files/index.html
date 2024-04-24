@@ -1,48 +1,61 @@
+<!DOCTYPE html>
 <html>
-  
     <head>
-        <title>Medical Chat Room (change later)</title>
-        <!-- logo -->
-        <link rel="icon" type="image/x-icon" href="favicons/favicon.ico?">
-        <!--  -->
+        <title>Disease Chat Rooms-Homepage</title>
+        <link rel="stylesheet" href="/css/index.css">
     </head>
-  
+
     <body>
+            <div id="topmain">
+                <div id="topleft">
+                    <p><b>Group Search</b></p>
+                        <p>Search for group here</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/OOjs_UI_icon_search.svg/640px-OOjs_UI_icon_search.svg.png" alt="..." width="15" height="15">
+                        <form id="chatSearch">
+                            <input type="text" id ="chatSearchInput">
+                            <button type="submit">Lookup</button>
+                        </form>
+                        <div id="searchResults"></div>
+                        
+                        <p id = "Extra info"> If you wish to create a new group email at: ... </p>
+                </div>
+
+                <div id="topright">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Human-emblem-people-pink-128.png" alt="..." width="50" height="50">
+                        <p><b>Login/Signup</b></p>
+                        <p id="accountSuccessInfo"></p>
+                        <button id="loginButton"> Click to Login</button>
+                        <button id="signUpButton">Click to Signup</button>
+
+                        <form id="loginForm" style="display: none;">
+                            <label id="loginText"></label>
+
+                            <input type="text" id="usernameInput" placeholder="Username">
+                            <input type="text" id="emailInput" placeholder="Email">
+                            <input type="text" id="passwordInput" placeholder="Password">
+
+                            <button id="loginFormButton"></button>
+                        </form>
+                </div>
+            </div>
         
-        <div id="header"> <!-- might be a good idea to box it out -->
-            <h3>Search for your group here</h1>
-            <form id="chatSearch">
-                <input id="chatSearchInput" type="text" placeholder="Type here">
-            </form>
-            
-            <div id="searchResults"></div>
 
-            <button id="loginButton">Login</button>
-            <button id="signUpButton">Sign Up</button>
-            <form id="loginForm" style="display: none;">
-                <p id="loginText">Log in/Sign in</p>
-                <input id="emailInput" type="text" placeholder="Email Adress">
-                <input id="passwordInput" type="text" placeholder="Password">
-                <input id="usernameInput" type="text" placeholder="Username">
-                <button id="loginFormButton">Login/Sign in</button>
-            </form>
-            <p id="accountSuccessInfo"></p>
+            <div id="middlemain">
+                <h1 style="background-color:DodgerBlue; text-align:center; font-size:800%", id = "Website header1">Limitless Lisa</h1>
+                <h1 style="background-color:DodgerBlue; text-align:center; font-size:800%", id = "Website header2">Chatroom</h1>
+            </div>
 
-            <p>You can make a group by emailing us</p>
-        </div>
-
-        <br>
-
-        <h1 id="pageContent">Limitless Lisa<br>Chat Rooms</h1>
-
-        <br>
-
-        <div id="bottom">
-            <p>Help share this incredible reosurce</p>
-            <button>X</button>
-            <button>FaceBook</button>
-            <button>Instagram</button>
-        </div>
+            <div id = "tabMain" class="tab">
+                <div id = "page1" class="tab">
+                    <button type = "button" style="background-color:DodgerBlue; text-align:center; font-size:100%", id = "Page1">Chatroom</button>
+                </div>
+                <div id = "page2" class="tab">
+                    <button type = "button" style="background-color:DodgerBlue; text-align:center; font-size:100%", id = "Page2">Info</button>
+                </div>
+                <div id = "page3" class="tab">
+                    <button type = "button" style="background-color:DodgerBlue; text-align:center; font-size:100%", id = "Page3">Share</button>
+                </div>
+            </div>
 
         <script src="https://cdn.socket.io/4.6.1/socket.io.min.js"></script>
         <script src="/js/frontend.js"></script>
